@@ -1,0 +1,44 @@
+<mjml>
+    <mj-body>
+        <mj-section background-color="{{style.background_colour}}">
+            <mj-section>
+                <mj-column>
+                    <mj-text align="center" font-size="30px" color="{{style.header_colour}}" font-family="helvetica">
+                        {{title}}
+                    </mj-text>
+                    <mj-divider border-color="{{style.border_colour}}"></mj-divider>
+                </mj-column>
+            </mj-section>
+
+            {% for drink in drinks %}
+
+            <mj-section>
+                <mj-section>
+                    <mj-text align="center" font-size="20px" color="{{style.sub_header}}" font-family="helvetica">
+                        {{drink.name}}
+                    </mj-text>
+                </mj-section>
+                <mj-section>
+                    <mj-column>
+                        <mj-image src="{{drink.thumbnail}}"></mj-image>
+                    </mj-column>
+                    <mj-column>
+
+                        {% for ingredient in drink.ingredients %}
+                        <mj-text font-size="16px" color="{{style.text_colour}}" font-family="helvetica">
+                            {{ingredient[0]}} -
+                            {{ingredient[1]}}
+                        </mj-text>
+                        {% endfor %}
+                    </mj-column>
+                </mj-section>
+                <mj-column>
+                    <mj-divider border-color="{{style.border_colour}}"></mj-divider>
+                </mj-column>
+            </mj-section>
+            {% endfor %}
+
+
+        </mj-section>
+    </mj-body>
+</mjml>

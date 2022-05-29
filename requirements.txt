@@ -1,0 +1,4 @@
+requests==2.27.1
+promail==0.4.3
+promail-template==0.2.0
+html2text==2020.1.16
